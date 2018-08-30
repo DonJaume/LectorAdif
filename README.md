@@ -42,7 +42,7 @@ Clase escrita en C# (.net) que nos permite leer y tratar archivos ADIF (.adi) as
 - Si el archivo contiene cabecera (CabeceraEncontrada = true), éste resultado indica los campos encontrados que NO estaban incluidos en la cabecera.
 - Si el archivo contiene cabecera (CabeceraEncontrada = false), éste resultado indica el nº total de los campos encontrados.
 
-**4) QSO** - Tipo List<Dictionary<string, string>> - Retorna una lista de diccionarios con los QSO's obtenidos.
+**4) QSO** - Tipo List<Dictionary<string, string>> - Retorna una lista de diccionarios con los QSO's obtenidos y todos sus datos.
 
 **5) CurrentPatch** - Tipo string - Retorna la ruta actual (Patch) del archivo.
 
