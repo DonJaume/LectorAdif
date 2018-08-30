@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 
-namespace LectorADIF
+namespace LectorAdif
 {
     [Serializable]
     public class Adif
