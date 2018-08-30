@@ -70,33 +70,13 @@ namespace LectorAdif
         }
 
 
-        //****************************************** METODOS PÚBLICOS ******************************
+        //****************************************** PROPIEDADES ******************************
 
-
-        /// <summary>
-        /// Inserta un nuevo campo en un QSO o lo modifica si éste ya existe.
-        /// </summary>
-        /// <param name="n_QSO">Número de QSO</param>
-        /// <param name="campo">Nombre del campo</param>
-        /// <param name="valor">Valor del campo</param>
-        public void Insertar_Modificar_Campo(int n_QSO, string campo, string valor)
-        {
-            if (!n_campos.Contains(campo))                                    //si el campo que se desea adjuntar no está en la lista de campos, lo adjuntamos
-            {
-                n_campos.Add(campo);                                          //incluimos el campo nuevo en la lista
-                N_Campos_No_cabecera++;
-                GeneraListaCampos();                                          //Se regenera la matriz del listado de campos incluyendo el campo nuevo
-                lista_QSO[n_QSO].Add(campo, valor);                           //incluimos el rato en el campo del qso seleccionado
-            }
-            else
-                lista_QSO[n_QSO][campo] = valor;
-
-        }
 
         /// <summary>
         /// Indica si se encontró una cabecera válida.
-        /// <para>Si el es True, en la variable 'campos' estarán incluidos todos los campos de la cabecera.</para>
-        /// <para>Si es False, en la variable 'campos' se aparecerán los campos encontrados en los QSO's.</para>
+        /// <para>Si el es True, en la propiedad 'campos' estarán incluidos todos los campos de la cabecera.</para>
+        /// <para>Si es False, en la propiedad 'campos' se aparecerán los campos encontrados en los QSO's.</para>
         /// </summary>
         public bool CabeceraEncontrada
         {
@@ -160,9 +140,33 @@ namespace LectorAdif
             }
         }
 
+        //****************************************** METODOS PÚBLICOS ******************************
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <param name="n_QSO">Número de QSO</param>
+        /// <param name="campo">Nombre del campo</param>
+        /// <param name="valor">Valor del campo</param>
+        public void Insertar_Modificar_Campo(int n_QSO, string campo, string valor)
+        {
+            if (!n_campos.Contains(campo))                                    //si el campo que se desea adjuntar no está en la lista de campos, lo adjuntamos
+            {
+                n_campos.Add(campo);                                          //incluimos el campo nuevo en la lista
+                N_Campos_No_cabecera++;
+                GeneraListaCampos();                                          //Se regenera la matriz del listado de campos incluyendo el campo nuevo
+                lista_QSO[n_QSO].Add(campo, valor);                           //incluimos el rato en el campo del qso seleccionado
+            }
+            else
+                lista_QSO[n_QSO][campo] = valor;
+
+        }
+
+
+
         //----metodos de guardado (Sobrecargados)----
 
-            
+
         /// <summary>
         /// Guarda el archivo actual.
         /// </summary>
