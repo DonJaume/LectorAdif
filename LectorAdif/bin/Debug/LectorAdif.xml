@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LectorAdif</name>
+    </assembly>
+    <members>
+        <member name="M:LectorAdif.Adif.#ctor(System.String,System.Boolean,System.String)">
+            <summary>
+            Genera una lista de diccionarios que contiene los QSO's, lee la cabecera de campos si existe. Permite cambiar el inicio de cabecera.
+            </summary>
+            <param name="Patch">Ruta del archivo</param>
+            <param name="Cab">En caso de haber cabecera y el valor es 'true', adjunta al diccionario todos los campos ahunque no existan en el QSO. Si el valor es 'false' solo adjunta los campos encontrados en el QSO</param>
+            <param name="Ini_cabecera">Cambia la cadena de inicio de cabecera. Por defecto es 'Exported Fields :'</param>
+        </member>
+        <member name="M:LectorAdif.Adif.#ctor(System.String,System.Boolean)">
+            <summary>
+            Genera una lista de diccionarios que contiene los QSO's, lee la cabecera de campos si existe.
+            </summary>
+            <param name="Patch">Ruta del archivo</param>  
+            <param name="Cab">En caso de haber cabecera y el valor es 'true', adjunta al diccionario todos los campos ahunque no existan en el QSO. Si el valor es 'false' solo adjunta los campos encontrados en el QSO</param>
+        </member>
+        <member name="M:LectorAdif.Adif.#ctor(System.String)">
+            <summary>
+            Genera una lista de diccionarios que contiene los QSO's
+            </summary>
+            <param name="Patch">Ruta del archivo</param>
+        </member>
+        <member name="P:LectorAdif.Adif.CabeceraEncontrada">
+            <summary>
+            Indica si se encontró una cabecera válida.
+            <para>Si el es True, en la propiedad 'campos' estarán incluidos todos los campos de la cabecera.</para>
+            <para>Si es False, en la propiedad 'campos' se aparecerán los campos encontrados en los QSO's.</para>
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.Campos">
+            <summary>
+            Retorna el listado de Campos obtenidos.
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.CamposNoCabecera">
+            <summary>
+            Indica el número de nuevos campos.
+            <para>Si el archivo contíene cabecera (CabeceraEncontrada = true), éste resultado indica los campos encontrados que NO estaban incluidos en la cabecera.</para>
+            <para>Si el archivo contíene cabecera (CabeceraEncontrada = false), éste resultado indica el nº total de los campos encontrados.</para>
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.QSO">
+            <summary>
+            Retorna una lista de diccionarios con los QSO's obtenidos.
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.CurrentPatch">
+            <summary>
+            Retorna la dirección actual del archivo
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.Cabecera">
+            <summary>
+            Obtiene o establece la información de cabecera.
+            </summary>
+        </member>
+        <member name="P:LectorAdif.Adif.FechaHora">
+            <summary>
+            Obtiene la hora actual en formato ADIF
+            </summary>
+        </member>
+        <member name="M:LectorAdif.Adif.Insertar_Modificar_Campo(System.Int32,System.String,System.String)">
+            <summary>
+             
+            </summary>
+            <param name="n_QSO">Número de QSO</param>
+            <param name="campo">Nombre del campo</param>
+            <param name="valor">Valor del campo</param>
+        </member>
+        <member name="M:LectorAdif.Adif.Guardar(System.Boolean)">
+            <summary>
+            Guarda el archivo actual.
+            </summary>
+            <param name="CabeceraCampos">False: No guarda la información de campos en la cabecera.  True: Guarda la información de campos en la cabecera.</param>
+        </member>
+        <member name="M:LectorAdif.Adif.Guardar(System.Boolean,System.String[])">
+            <summary>
+            Guarda el archivo actual.
+            </summary>
+            <param name="CabeceraCampos">False: No guarda la información de campos en la cabecera.  True: Guarda la información de campos en la cabecera.</param>
+            <param name="SelCampos">Lista de los elementos que desea guardar</param>
+        </member>
+        <member name="M:LectorAdif.Adif.GuardarComo(System.String,System.Boolean)">
+            <summary>
+            Guarda el archivo actual en una nueva ruta
+            </summary>
+            <param name="NewPatch">Ruta completa de guardado de archivo</param>
+            <param name="CabeceraCampos">False: No guarda la información de campos en la cabecera.  True: Guarda la información de campos en la cabecera.</param>
+        </member>
+        <member name="M:LectorAdif.Adif.GuardarComo(System.String,System.Boolean,System.String[])">
+            <summary>
+            Guarda el archivo actual en una nueva ruta
+            </summary>
+            <param name="NewPatch">Ruta completa de guardado de archivo</param>
+            <param name="CabeceraCampos">False: No guarda la información de campos en la cabecera.  True: Guarda la información de campos en la cabecera.</param>
+            <param name="SelCampos">Lista de los elementos que desea guardar</param>
+        </member>
+    </members>
+</doc>
